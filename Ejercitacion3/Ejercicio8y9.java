@@ -7,16 +7,22 @@ public class Ejercicio8y9 {
 
     String reverso(String unaCadenaTexto){
         //Retornar el reverso de una cadena de texto.
+        int length = unaCadenaTexto.length();
+        String cadenaAlreves = "";
 
+        for (int i = length - 1 ; i >= 0 ; --i) {
+            Character letra = unaCadenaTexto.charAt(i);
+            cadenaAlreves = cadenaAlreves + letra;
+        }
 
-        return null;
+        return cadenaAlreves;
     }
 
     Boolean palindromo(String unaCadenaTexto){
         //Retornar true si la palabra es palíndromo (capicúa).
         //Utilizando la funcion que creamos anteriormente podemos definir si es palindromo
 
-        return reverso(unaCadenaTexto) == unaCadenaTexto;
+        return  unaCadenaTexto.equals(reverso(unaCadenaTexto));
 
     }
 
