@@ -8,6 +8,11 @@ public class FuegosIndividuales implements Explotables {
     }
 
     @Override
+    public void comienzo() {
+        ruido = ruido;
+    }
+
+    @Override
     public void explotar() {
         System.out.println(ruido);
     }
