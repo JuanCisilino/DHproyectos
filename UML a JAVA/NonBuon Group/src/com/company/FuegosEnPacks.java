@@ -1,23 +1,25 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class FuegosEnPacks{
+public class FuegosEnPacks implements Explotables{
 
-    private ArrayList<String> listaDeExplotables = new ArrayList<>();
+    private List<Explotables> listaDeExplotables ;
 
-   public void comienzo(){
-       listaDeExplotables.add(0,"pam");
-       listaDeExplotables.add(1,"pem");
-       listaDeExplotables.add(2,"pim");
-       listaDeExplotables.add(3,"pom");
-       listaDeExplotables.add(4,"pum");
-   }
+
+    public void agregarExplotable(Explotables explotables) {
+        listaDeExplotables.add(explotables);
+    }
+
+    @Override
+    public void comienzo() {
+
+    }
 
     public void explotar(){
-        for (Integer i = 0 ; i < listaDeExplotables.size() ; i++){
-            String unExplotable = listaDeExplotables.get(i);
-            System.out.println(listaDeExplotables);;
+        for (Explotables unExplotable: listaDeExplotables) {
+            unExplotable.explotar();
         }
     }
 

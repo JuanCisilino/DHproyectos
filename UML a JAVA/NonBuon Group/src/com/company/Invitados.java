@@ -1,6 +1,6 @@
 package com.company;
 
-public class Invitados {
+public abstract class Invitados {
 
     private String nombre;
     private Integer dni;
@@ -9,5 +9,7 @@ public class Invitados {
         this.dni = dni;
         this.nombre = nombre;
     }
+
+    public abstract void comer();
 
 }

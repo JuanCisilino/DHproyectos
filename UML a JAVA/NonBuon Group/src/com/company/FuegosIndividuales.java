@@ -1,10 +1,10 @@
 package com.company;
 
 public class FuegosIndividuales implements Explotables {
-    public String ruido;
+    private String ruido;
 
     public FuegosIndividuales(){
-        this.ruido = "Pum Pim Pam";
+        this.ruido = ruido;
     }
 
     @Override

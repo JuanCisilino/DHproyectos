@@ -5,17 +5,15 @@ public class Main {
      public static void main(String[] args) {
 	// write your code here
 
-    FuegosIndividuales unExplotable = new FuegosIndividuales();
-    FuegosEnPacks unkitExplotable = new FuegosEnPacks();
-    InvitadosST unInvitadoST = new InvitadosST("Nicolas", 55342123);
-    InvitadosDH unInvitadoDH = new InvitadosDH("Juan", 30814321);
+    NonVivoGroup evento = new NonVivoGroup();
 
-        unExplotable.comienzo();
-        unkitExplotable.comienzo();
-        unExplotable.explotar();
-        unkitExplotable.explotar();
+    Invitados pat = new InvitadosDH("Pat", 0303020303);
 
-        unInvitadoDH.comer();
+    evento.agregarInvitado(pat);
+
+    for (int i = 0; i < 30 ; i++) {
+        
+    }
 
 
     }
