@@ -8,16 +8,26 @@ public class Coca {
         this.tamano = tamano;
     }
 
-    public boolean equals(Object object) {
+
+    //public boolean equals(Object object) {
+    //    Coca unaCoca = (Coca) object;
+    //    if(this.tamano.equals(unaCoca.tamano)&& this.precio.equals(unaCoca.precio)){
+    //        System.out.println(true);
+    //   } else {
+    //        System.out.println(false);
+    //    }
+    //    return false;
+    //}
+
+    public boolean equals(Object object){
         Coca unaCoca = (Coca) object;
-        if(this.tamano.equals(unaCoca.tamano)&& this.precio.equals(unaCoca.precio)){
+        if (this.tamano.equals(unaCoca.tamano)){
             System.out.println(true);
         } else {
             System.out.println(false);
         }
         return false;
     }
-
 
 
 
