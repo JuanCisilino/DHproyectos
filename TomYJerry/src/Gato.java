@@ -26,7 +26,7 @@ public class Gato extends Raton {
 
     public void comerRaton(Raton unRaton){
         energia = energia + unRaton.getPeso();
-
+        System.out.println("Me comi un raton y mi nueva energia es " + energia);
     }
 
     public void comerRaton(List<Raton> ratones){

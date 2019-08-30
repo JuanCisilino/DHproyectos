@@ -7,7 +7,7 @@ public class Main {
 
         System.out.println(tom.getNombre());
 
-        
+
 
     }
 }
