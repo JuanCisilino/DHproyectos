@@ -3,19 +3,19 @@ public class Limpieza {
     private String nombre;
     private String apellido;
     private int sueldoMensual;
+    private int vajillaRota;
 
-    public Limpieza(String nombre, String apellido) {
+    public Limpieza(String nombre, String apellido, int vajillaRota) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.sueldoMensual = 45000;
+        this.sueldoMensual = 10000;
+        this.vajillaRota = vajillaRota;
     }
 
-
-    public void getVajillaRota(Integer vajillaRota) {
-        sueldoMensual = sueldoMensual - vajillaRota * 5;
-    }
 
     public void getSueldoMensual() {
-        System.out.println("Su sueldo de Limpieza es $" + sueldoMensual);
+        System.out.println("\nSu sueldo mensual como Limpieza es de $" + sueldoMensual);
+        sueldoMensual = sueldoMensual - vajillaRota*5;
+        System.out.println("Luego de descontar los " + vajillaRota + " juegos a reponer. Su sueldo quedara en $" + sueldoMensual);
     }
 }

@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="692cbb50-c43c-4de0-8f59-f327b5a4a2b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../TGI Thursdays/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TGI Thursdays/src/Empleados.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TGI Thursdays/src/Lavadores.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TGI Thursdays/src/Limpieza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGI Thursdays/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TGI Thursdays/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGI Thursdays/out/production/TGI Thursdays/Empleados.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TGI Thursdays/out/production/TGI Thursdays/Empleados.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGI Thursdays/out/production/TGI Thursdays/Lavadores.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TGI Thursdays/out/production/TGI Thursdays/Lavadores.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGI Thursdays/out/production/TGI Thursdays/Limpieza.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TGI Thursdays/out/production/TGI Thursdays/Limpieza.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGI Thursdays/out/production/TGI Thursdays/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TGI Thursdays/out/production/TGI Thursdays/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGI Thursdays/src/Empleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TGI Thursdays/src/Empleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGI Thursdays/src/Lavadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TGI Thursdays/src/Lavadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGI Thursdays/src/Limpieza.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TGI Thursdays/src/Limpieza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGI Thursdays/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TGI Thursdays/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,7 +84,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+    <option name="x" value="114" />
+    <option name="y" value="-3" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
@@ -117,7 +120,7 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="tomyjerry" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567124165819" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567125031329" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

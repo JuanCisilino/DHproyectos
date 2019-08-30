@@ -9,6 +9,7 @@ public abstract class Empleados {
         this.nombre = nombre;
         this.apellido = apellido;
         this.sueldoMensual = 45000.0;
+        this.vajillaRota = vajillaRota;
 
     }
 
