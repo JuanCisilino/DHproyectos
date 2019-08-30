@@ -3,7 +3,7 @@ public class Raton {
     private String nombre;
     private Double peso;
 
-    public void Raton(String nombre){
+    public Raton(String nombre, Double peso){
         this.nombre = nombre;
         this.peso = peso;
     }

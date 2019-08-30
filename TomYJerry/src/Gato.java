@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Gato extends Raton {
+public class Gato {
 
     private String nombre;
     private Double energia;
@@ -35,14 +35,18 @@ public class Gato extends Raton {
         }
     }
 
-    public Double correr(Integer cantidadDeMetros){
-        energia = (0.5 * cantidadDeMetros) - energia ;
-        return velocidad / cantidadDeMetros;
+    private Double energiaConsumida(Integer metros){
+        return 0.5*metros;
+    }
+
+    public Double correr(Integer metros){
+        energia = energia - energiaConsumida(metros) ;
+        return metros/velocidad;
     }
 
     public Boolean meConvieneComerA(Raton unRaton, Integer distancia){
 
-        return unRaton.getPeso() >= correr(distancia) ;
+        return unRaton.getPeso() > energiaConsumida(distancia) ;
     }
 
 
