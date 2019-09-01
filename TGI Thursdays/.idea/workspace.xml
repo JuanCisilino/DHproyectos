@@ -2,21 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45fb0355-1782-4092-9e55-503ac06b7ad6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../WODH/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/out/production/WODH/com/company/Dragon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/out/production/WODH/com/company/Guerrero.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/out/production/WODH/com/company/Mago.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/out/production/WODH/com/company/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/src/com/company/Criatura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/src/com/company/Dragon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/src/com/company/Guerrero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/src/com/company/Heroes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/src/com/company/Mago.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WODH/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UML a JAVA/Impresora/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UML a JAVA/Impresora/.idea/workspace.xml" afterDir="false" />
     </list>

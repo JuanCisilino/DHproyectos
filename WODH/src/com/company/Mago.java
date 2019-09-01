@@ -9,13 +9,6 @@ public class Mago extends Heroes {
         super(nivelDeExperiencia);
     }
 
-    public void resucitarAGuerrero(Guerrero unGuerrero){
-        if(unGuerrero.getNivelDeExperiencia() <= this.getNivelDeExperiencia()){
-            unGuerrero.setNivelDeVida(20);
-            System.out.println("El Mago ha resucitado al Guerrero,\n de nada XD!!");
-        }
-    }
-
     public void ganador(){
         System.out.println("El mago ha ganado!!!");
     }
@@ -33,6 +26,13 @@ public class Mago extends Heroes {
         }else{
             this.setNivelDeExperiencia(getNivelDeExperiencia() - 1);
             perdedor();
+        }
+    }
+
+    public void resucitarAGuerrero(Guerrero unGuerrero){
+        if(unGuerrero.getNivelDeExperiencia() <= this.getNivelDeExperiencia()){
+            unGuerrero.setNivelDeVida(20);
+            System.out.println("El Mago ha resucitado al Guerrero,\n de nada XD!!");
         }
     }
 }
