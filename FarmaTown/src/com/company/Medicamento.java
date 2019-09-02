@@ -19,9 +19,9 @@ public class Medicamento implements Vendible{
     @Override
     public void vender(Persona unaPersona) {
         if (listaDeMedicamentos.contains(unaPersona.getAlergia())){
-            System.out.println(unaPersona.getNombre() + " no puede recibir este medicamento");
+            System.out.println("\n" + unaPersona.getNombre() + " no puede recibir este medicamento");
         } else {
-            System.out.println(unaPersona.getNombre() + " puede pasar por caja a abonar su medicamento!");
+            System.out.println("\n" + unaPersona.getNombre() + " puede pasar por caja a abonar su medicamento!");
         }
 
     }

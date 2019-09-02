@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        Persona juan = new Persona("Juan", "Ibuprofeno");
+        Persona juan = new Persona("Juan", "Papusa");
         Persona nico = new Persona("Nicolas", "Efedrina");
         Medicamento Ibu400 = new Medicamento();
         Medicamento Cafiaspirina = new Medicamento();
@@ -18,9 +18,9 @@ public class Main {
 
 
         Ibu400.vender(juan);
-        Cafiaspirina.vender(juan);
-
         Cafiaspirina.vender(nico);
+
+        Cafiaspirina.vender(juan);
         Ibu400.vender(nico);
 
     }
