@@ -3,22 +3,23 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Animal implements Cebador {
+public class Animal {
 
-    private String nombre;
-    private List<Animal> rondaDeMate;
+    private List<Cebador> rondaDeMate;
 
-    public void  Animal(String nombre) {
-        this.nombre = nombre;
+    public Animal() {
         this.rondaDeMate = new ArrayList<>();
     }
 
-    public void setRondaDeMate(Animal nombre) {
-        rondaDeMate.add(nombre);
+    public void agregarCebado(Cebador unCebado) {
+        rondaDeMate.add(unCebado);
     }
 
-    @Override
-    public void cebar() {
-
+    public void ronda(){
+        for (Integer i = 0 ; i < rondaDeMate.size(); i++){
+            Cebador unCebado = rondaDeMate.get(i);
+            unCebado.cebar();
+        }
     }
+
 }

@@ -1,13 +1,11 @@
 package com.company;
 
-public class Reptil extends Animal implements Cebador{
+public class Reptil implements Cebador{
 
-    private String nombre;
     private Integer energiaReptil;
 
-    public Reptil(String nombre) {
-        this.nombre = nombre;
-        this.energiaReptil = 2;
+    public Reptil() {
+        this.energiaReptil = 10;
     }
 
     public Integer getEnergiaReptil() {
@@ -17,7 +15,7 @@ public class Reptil extends Animal implements Cebador{
     @Override
     public void cebar() {
         energiaReptil = energiaReptil * 2;
-        System.out.println("Esta mas bueno que susana en los 80s!!");
+        System.out.println("(\nEsta mas bueno que susana en los 80s!!");
         System.out.println("Tu energia Reptiliana es de " + getEnergiaReptil());
     }
 }
