@@ -21,5 +21,18 @@ public class Main {
 
             System.out.println( clave + diccionario.get(clave));
         }
+
+        Map<String, String> diccionarioDeApodos = new HashMap<>();
+
+        diccionarioDeApodos.put("Juan:", " Juancho, Fisura, Ricardo Fort");
+        diccionarioDeApodos.put("Miguel:", " Night Watch, Bruce Wayne, Pati Corti");
+        diccionarioDeApodos.put("Maria:", " Wonder Woman, Mary, Roberto");
+        diccionarioDeApodos.put("Lucas:", " Luks, Jorge, Chorch");
+
+
+        for (String clave : diccionarioDeApodos.keySet()) {
+
+            System.out.println( clave + diccionarioDeApodos.get(clave));
+        }
     }
 }
