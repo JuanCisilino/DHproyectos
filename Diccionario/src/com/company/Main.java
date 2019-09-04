@@ -19,7 +19,7 @@ public class Main {
 
         for (Integer clave:diccionario.keySet()) {
 
-            System.out.println( clave + diccionario.get(clave));
+            System.out.println( clave.+ diccionario.get(clave));
         }
 
         Map<String, String> diccionarioDeApodos = new HashMap<>();

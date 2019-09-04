@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a58657c5-9761-485c-8c6a-c5cd9fcb89ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AutoyMoto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Auto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Carrera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Moto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SocorristaAuto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SocorristaAuto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SocorristaMoto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SocorristaMoto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vehiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Diccionario/out/production/Diccionario/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Diccionario/out/production/Diccionario/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Diccionario/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Diccionario/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +30,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567558323180" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AnimalTopia" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Diccionario" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

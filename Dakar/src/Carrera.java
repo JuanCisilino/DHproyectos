@@ -1,23 +1,24 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Carrera extends Vehiculo implements SocorristaAuto, SocorristaMoto {
 
     Set<Vehiculo> listaDeCorredores;
     List<String> listaDePatentes;
+    Map<Double, String> mapaDeCorredores;
     private Double distancia;
     private Double premioEnDolares;
     private String nombre;
     private Integer Auto;
     private Integer Moto;
+    private String ganador;
 
     public Carrera() {
         super();
+        this.mapaDeCorredores = new HashMap<>();
         this.listaDeCorredores = new HashSet<>();
         this.listaDePatentes = new ArrayList<>();
         this.distancia = distancia;
+        this.ganador = ganador;
         this.nombre = nombre;
         this.Auto = 0;
         this.Moto = 0;
@@ -27,7 +28,7 @@ public class Carrera extends Vehiculo implements SocorristaAuto, SocorristaMoto 
     public void darDeAltaAuto(Vehiculo unVehiculo) {
         if (listaDeCorredores.size() > 5) {
             listaDeCorredores.add(unVehiculo);
-            unVehiculo.getAceleracionDeCarreraAuto();
+            mapaDeCorredores.put(unVehiculo.getAceleracionDeCarreraAuto(), unVehiculo.getPatente());
             listaDePatentes.add(unVehiculo.getPatente());
             Auto++;
             System.out.println("Tu vehiculo patente" + unVehiculo.getPatente() + " ah sido agregado a la carrera");
@@ -37,7 +38,7 @@ public class Carrera extends Vehiculo implements SocorristaAuto, SocorristaMoto 
     public void darDeAltaMoto(Vehiculo unVehiculo) {
         if (listaDeCorredores.size() > 5) {
             listaDeCorredores.add(unVehiculo);
-            unVehiculo.getAceleracionDeCarreraMoto();
+            mapaDeCorredores.put(unVehiculo.getAceleracionDeCarreraMoto(), unVehiculo.getPatente());
             listaDePatentes.add(unVehiculo.getPatente());
             Moto++;
             System.out.println("Tu vehiculo patente" + unVehiculo.getPatente() + " ah sido agregado a la carrera");
@@ -60,6 +61,13 @@ public class Carrera extends Vehiculo implements SocorristaAuto, SocorristaMoto 
     public void eliminarVehiculoConPatente(Vehiculo unaPatente) {
         listaDeCorredores.remove(unaPatente);
         listaDePatentes.remove(unaPatente);
+    }
+
+    public void recorrerlista(){
+        for (Integer i = 0; i == listaDeCorredores.size(); i++) {
+            
+        }
+
     }
 
     public void ganadorDeLaCarrera() {
