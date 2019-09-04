@@ -1,4 +1,5 @@
-public abstract class SocorristaAuto {
+public interface SocorristaAuto {
 
-    public abstract void socorrerAuto();
+    public void socorrerAuto(Vehiculo unAuto);
+
 }
