@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a58657c5-9761-485c-8c6a-c5cd9fcb89ea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/Dakar/Carrera.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Dakar/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Dakar/SocorristaAuto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Dakar/SocorristaMoto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Dakar/Vehiculo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AutoyMoto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Carrera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Diccionario/out/production/Diccionario/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Diccionario/out/production/Diccionario/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Diccionario/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Diccionario/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vehiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehiculo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +61,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -74,7 +85,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
