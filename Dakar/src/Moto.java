@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class Moto extends Vehiculo {
 
-public class Moto {
+    public Moto(Double velocidad, Double aceleracion, Double anguloDeGiro, String patente) {
+        super(velocidad, aceleracion, anguloDeGiro, patente, 300.0, 2);
+    }
 }

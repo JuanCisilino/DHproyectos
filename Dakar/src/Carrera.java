@@ -1,91 +1,104 @@
 import java.util.*;
 
-public class Carrera implements SocorristaAuto, SocorristaMoto {
+public abstract class Carrera {
 
-    Map<Double, String> mapaDeCorredores;
+
+    private List<Vehiculo> listaDeVehiculos;
     private Double distancia;
-    private Double premioEnDolares;
+    private Integer premioEnDolares;
     private String nombre;
-    private Double ganador;
-    private Double aceleracionDeCarrera;
+    private Integer cantidadDeVehiculosPermitidos;
+    private SocorristaAuto socorristaAuto;
+    private SocorristaMoto socorristaMoto;
 
-    public Carrera() {
-        this.mapaDeCorredores = new HashMap<>();
+    public Carrera(String nombre, Double distancia, Integer premioEnDolares, Integer cantidadDeVehiculosPermitidos) {
+        this.listaDeVehiculos = new ArrayList<>();
         this.distancia = distancia;
-        this.aceleracionDeCarrera = aceleracionDeCarrera;
-        this.ganador = 0.0;
+        this.cantidadDeVehiculosPermitidos = cantidadDeVehiculosPermitidos;
         this.nombre = nombre;
-        this.premioEnDolares = 5000.00;
+        this.premioEnDolares = premioEnDolares;
+    }
+
+    private Boolean hayCupo() {
+        return listaDeVehiculos.size() < cantidadDeVehiculosPermitidos;
     }
 
     public void darDeAltaAuto(Double velocidad, Double aceleracion, Double anguloDeGiro, String patente) {
-        aceleracionDeCarrera = velocidad*0.5/aceleracion/(anguloDeGiro*(1000-4*100));
-        if (mapaDeCorredores.size() <= 5) {
-            mapaDeCorredores.put(aceleracionDeCarrera, patente);
-            System.out.println("Tu vehiculo patente " + patente + " ah sido agregado a la carrera");
+        if (hayCupo()) {
+            listaDeVehiculos.add(new Auto(velocidad, aceleracion, anguloDeGiro, patente));
+            System.out.println("Auto agregada correctamente!!");
+        } else {
+            System.out.println("No hay cupo!!");
         }
     }
 
     public void darDeAltaMoto(Double velocidad, Double aceleracion, Double anguloDeGiro, String patente) {
-        aceleracionDeCarrera = velocidad*0.5/aceleracion/(anguloDeGiro*(300-2*100));
-        if (mapaDeCorredores.size() <= 5) {
-            mapaDeCorredores.put(aceleracionDeCarrera, patente);
-            System.out.println("Tu vehiculo patente " + patente + " ah sido agregado a la carrera");
+          if (hayCupo()) {
+            listaDeVehiculos.add(new Moto(velocidad, aceleracion, anguloDeGiro, patente));
+            System.out.println("Moto agregada correctamente!!");
+        } else {
+            System.out.println("No hay cupo!!");
         }
     }
 
-    public void eliminarAuto(Vehiculo unVehiculo) {
-        mapaDeCorredores.remove(unVehiculo);
-        System.out.println("Tu vehiculo patente" + unVehiculo.getPatente() + "ah sido eliminado de la carrera");
-        }
-
-    public void eliminarMoto(Vehiculo unVehiculo) {
-        mapaDeCorredores.remove(unVehiculo);
-        System.out.println("Tu vehiculo patente" + unVehiculo.getPatente() + "ah sido eliminado de la carrera");
-    }
-
-    public void eliminarVehiculoConPatente(Vehiculo unaPatente) {
-        eliminarMoto(unaPatente);
-        eliminarAuto(unaPatente);
-        System.out.println("Tu vehiculo patente" + unaPatente.getPatente()+ "ah sido eliminado de la carrera");;
-    }
-
-    public  void mostrarListaDeCorredores() {
-        for (Double clave: mapaDeCorredores.keySet()) {
-            System.out.println( mapaDeCorredores.get(clave));
+    public void eliminarVehiculo(Vehiculo unVehiculo) {
+        if (listaDeVehiculos.remove(unVehiculo)) {
+            System.out.println("Tu vehiculo patente" + unVehiculo.getPatente() + "ah sido eliminado de la carrera");
+        } else {
+            System.out.println("No se pudo eliminar el vehiculo");
         }
     }
 
-
-    public void ganadorDeLaCarrera() {
-        for (Double clave: mapaDeCorredores.keySet()) {
-            if (clave > ganador) {
-                ganador = clave;
-            } else {
-                System.out.println("\nEl ganador eeeessssss el vehiculo patenteeee >>  " + mapaDeCorredores.get(ganador));
+    private Vehiculo buscarVehiculoPorPatente(String patente){
+        Vehiculo vehiculoBuscado = null;
+        for (Vehiculo vehiculo:listaDeVehiculos) {
+            if (vehiculo.getPatente().equals(patente)){
+                vehiculoBuscado = vehiculo;
             }
         }
+        return vehiculoBuscado;
     }
 
+    public void eliminarVehiculo(String unaPatente) {
 
+        Vehiculo vehiculoAEliminar = buscarVehiculoPorPatente(unaPatente);
 
-    public void socorrerAuto(String patente) {
-        socorrerAuto(patente);
+            eliminarVehiculo(vehiculoAEliminar);
     }
 
-    public void socorrerMoto(String patente) {
-        socorrerMoto(patente);
+    public Vehiculo definirGanador(){
+
+        Vehiculo vehiculoGanador = listaDeVehiculos.get(0);
+
+        for (Vehiculo vehiculo: listaDeVehiculos) {
+            if (vehiculo.calcularValor() > vehiculoGanador.calcularValor()){
+                vehiculoGanador = vehiculo;
+            }
+        }
+        return vehiculoGanador;
     }
 
-    @Override
-    public void socorrerAuto(Vehiculo unAuto) {
-        System.out.println("Socorriendo Auto " + unAuto.getPatente());
+    public void socorrerAuto(String patente){
+        try{
+            Auto vehiculoASocorrer = (Auto) buscarVehiculoPorPatente(patente);
+            socorristaAuto.socorrer(vehiculoASocorrer);
+
+        } catch (ClassCastException e) {
+            System.out.println("Lo que estas intentando socorrer no es un Auto!!");
+        }
+
     }
 
-    @Override
-    public void socorrerMoto(Vehiculo unaMoto) {
-        System.out.println("Socorriendo Moto " + unaMoto.getPatente());
+    public void socorrerMoto(String patente){
+        try{
+            Moto vehiculoASocorrer = (Moto) buscarVehiculoPorPatente(patente);
+            socorristaMoto.socorrer(vehiculoASocorrer);
+
+        } catch (ClassCastException e) {
+            System.out.println("Lo que estas intentando socorrer no es una Moto!!");
+        }
 
     }
 
 }
+

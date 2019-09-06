@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class Auto extends Vehiculo {
 
-public class Auto {
+    public Auto(Double velocidad, Double aceleracion, Double anguloDeGiro, String patente) {
+        super(velocidad, aceleracion, anguloDeGiro, patente, 1000.0, 4);
+    }
 }
