@@ -1,5 +1,4 @@
-public interface SocorristaAuto {
+package PACKAGE_NAME;
 
-    public void socorrerAuto(Vehiculo unAuto);
-
+public class SocorristaAuto {
 }
