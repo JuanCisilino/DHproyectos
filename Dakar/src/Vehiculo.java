@@ -36,7 +36,7 @@ public class Vehiculo {
         return patente;
     }
     public Double calcularValor(){
-        return velocidad * (aceleracion/2) / (anguloDeGiro*(peso - cantidadDeRuedas * 100));
+        return (velocidad * (aceleracion/2) / (anguloDeGiro*(peso - cantidadDeRuedas * 100)));
     }
 
 }

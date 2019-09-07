@@ -1,6 +1,6 @@
 import java.util.*;
 
-public abstract class Carrera {
+public class Carrera {
 
 
     private List<Vehiculo> listaDeVehiculos;
@@ -26,7 +26,7 @@ public abstract class Carrera {
     public void darDeAltaAuto(Double velocidad, Double aceleracion, Double anguloDeGiro, String patente) {
         if (hayCupo()) {
             listaDeVehiculos.add(new Auto(velocidad, aceleracion, anguloDeGiro, patente));
-            System.out.println("Auto agregada correctamente!!");
+            System.out.println("Auto " + patente + " agregado correctamente!!");
         } else {
             System.out.println("No hay cupo!!");
         }
@@ -35,7 +35,7 @@ public abstract class Carrera {
     public void darDeAltaMoto(Double velocidad, Double aceleracion, Double anguloDeGiro, String patente) {
           if (hayCupo()) {
             listaDeVehiculos.add(new Moto(velocidad, aceleracion, anguloDeGiro, patente));
-            System.out.println("Moto agregada correctamente!!");
+            System.out.println("Moto " + patente + " agregada correctamente!!");
         } else {
             System.out.println("No hay cupo!!");
         }
@@ -43,20 +43,10 @@ public abstract class Carrera {
 
     public void eliminarVehiculo(Vehiculo unVehiculo) {
         if (listaDeVehiculos.remove(unVehiculo)) {
-            System.out.println("Tu vehiculo patente" + unVehiculo.getPatente() + "ah sido eliminado de la carrera");
+            System.out.println("Tu vehiculo patente " + unVehiculo.getPatente() + "ah sido eliminado de la carrera");
         } else {
             System.out.println("No se pudo eliminar el vehiculo");
         }
-    }
-
-    private Vehiculo buscarVehiculoPorPatente(String patente){
-        Vehiculo vehiculoBuscado = null;
-        for (Vehiculo vehiculo:listaDeVehiculos) {
-            if (vehiculo.getPatente().equals(patente)){
-                vehiculoBuscado = vehiculo;
-            }
-        }
-        return vehiculoBuscado;
     }
 
     public void eliminarVehiculo(String unaPatente) {
@@ -75,7 +65,8 @@ public abstract class Carrera {
                 vehiculoGanador = vehiculo;
             }
         }
-        return vehiculoGanador;
+        System.out.println( "El ganador es el vehiculo patente " + vehiculoGanador.getPatente());
+        return null;
     }
 
     public void socorrerAuto(String patente){
@@ -98,6 +89,16 @@ public abstract class Carrera {
             System.out.println("Lo que estas intentando socorrer no es una Moto!!");
         }
 
+    }
+
+    private Vehiculo buscarVehiculoPorPatente(String patente){
+        Vehiculo vehiculoBuscado = listaDeVehiculos.get(0);
+        for (Vehiculo vehiculo:listaDeVehiculos) {
+            if (vehiculo.getPatente().equals(patente)){
+                vehiculoBuscado = vehiculo;
+            }
+        }
+        return vehiculoBuscado;
     }
 
 }

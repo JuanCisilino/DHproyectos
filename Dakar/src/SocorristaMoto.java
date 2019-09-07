@@ -1,6 +1,6 @@
 public class SocorristaMoto {
 
-    public void socorrer(Moto unaMoto) {
-        System.out.println("Socorri a " + unaMoto);
+    public void socorrer(Moto moto) {
+        System.out.println("Socorri a " + moto);
     }
 }
