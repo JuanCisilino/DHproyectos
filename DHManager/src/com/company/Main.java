@@ -41,7 +41,7 @@ public class Main {
         android.bajaProfesor(123);
 
         android.bajaCurso(20002);
-        
+
 
 
 /*      //crear los alumnos

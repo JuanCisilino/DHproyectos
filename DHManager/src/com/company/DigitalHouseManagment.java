@@ -101,7 +101,7 @@ public class DigitalHouseManagment {
     for (Curso curso:listaDeCursos) {
             cupoMaximo = curso.getCupoMaximo(codigoCurso);
         }
-        return listaDeInscriptos.size() < cupoMaximo;
+        return listaDeInscriptos.size() <= cupoMaximo;
     }
 
     public List<Alumno> getListaDeAlumnos() {
