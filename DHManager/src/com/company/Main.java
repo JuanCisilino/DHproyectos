@@ -5,43 +5,38 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        Curso fullStack = new Curso("Full Stack", 20001, 3);
-        Curso android = new Curso("Android", 20002, 2);
+        DigitalHouseManagment DHManager = new DigitalHouseManagment();
 
-        fullStack.altaCurso("Full Stack", 20001, 3);
-        android.altaCurso("Android", 20002, 2);
+        DHManager.altaCurso("android", 20001, 2);
+        DHManager.altaCurso("full stack", 20002, 3);
 
+        DHManager.altaAlumno("Juan","Cisilino",123);
+        DHManager.altaAlumno("Nicolas","Cisili",456);
+        DHManager.altaAlumno("Jose","Cisi",789);
+        DHManager.altaAlumno("Agustin","Silino",159);
+        DHManager.altaAlumno("Ramiro","Cisino",753);
+        DHManager.altaAlumno("Pedro","Cilino",123);
 
-        fullStack.altaProfesorAdjunto("Patricio", "Ugarte", 789, 20);
-        fullStack.altaProfesorTitular("Nicolas", "Lopez", 123, "Android");
+        DHManager.altaProfesorAdjunto("Pat","Ugarte", 123,20);
+        DHManager.altaProfesorTitular("Nicolas", "Lopez", 456, "Android");
 
-        android.altaProfesorTitular("Jose", "Formosa", 456, "UTN");
-        android.altaProfesorAdjunto("Alex", "Dejulio",753,30);
+        DHManager.altaProfesorTitular("Jose", "Formosa", 789, "UTN");
+        DHManager.altaProfesorAdjunto("Alex", "Dejulio", 753, 20);
 
+        DHManager.inscribirAlumno(123,20001);
+        DHManager.inscribirAlumno(456,20001);
 
-        fullStack.asignarProfesores(20001,123,789);
-        android.asignarProfesores(20002, 456,753);
+        DHManager.inscribirAlumno(789,20002);
+        DHManager.inscribirAlumno(159,20002);
+        DHManager.inscribirAlumno(753,20002);
+        DHManager.inscribirAlumno(123,20002);
 
+        DHManager.asignarProfesores(20001,456,123);
+        DHManager.asignarProfesores(20002,789,753);
 
+        DHManager.bajaProfesor(789);
 
-        android.altaAlumno("Juan","Cisilino",123);
-        android.altaAlumno("Gabriel","Perez",456);
-        android.altaAlumno("Agustin","Gimenez",789);
-
-        fullStack.altaAlumno("Jose","Provilo",159);
-        fullStack.altaAlumno("Andres","Nones",753);
-
-        android.inscribirAlumno(123,20002);
-        android.inscribirAlumno(456,20002);
-        android.inscribirAlumno(789,20002);
-
-        fullStack.inscribirAlumno(159,20001);
-        fullStack.inscribirAlumno(753,20001);
-
-        android.bajaProfesor(123);
-
-        android.bajaCurso(20002);
-
+        DHManager.bajaCurso(20001);
 
 
 /*      //crear los alumnos

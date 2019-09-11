@@ -5,74 +5,95 @@ import java.util.*;
 public class DigitalHouseManagment {
 
     private List<Alumno> listaDeAlumnos;
-    private Set<Profesor> listaDeProfesores;
-    private Set<Curso> listaDeCursos;
+    private List<Profesor> listaDeProfesores;
+    private List<Curso> listaDeCursos;
     private List<Inscripcion> listaDeInscriptos;
-    private Integer cupoMaximo = null;
-    private String nombre = null;
-    private Integer codigoDeCurso = null;
+    private Integer cupoMaximo;
 
     public DigitalHouseManagment() {
 
         this.listaDeAlumnos = new ArrayList<>();
-        this.listaDeProfesores = new HashSet<>();
-        this.listaDeCursos = new HashSet<>();
+        this.listaDeProfesores = new ArrayList<>();
+        this.listaDeCursos = new ArrayList<>();
         this.listaDeInscriptos = new ArrayList<>();
 
     }
 
     public void altaCurso(String nombre, Integer codigoCurso, Integer cupoMaximo){
+
         listaDeCursos.add(new Curso(nombre, codigoCurso, cupoMaximo));
         System.out.println("Curso " + nombre + " creado");
     }
 
     public void bajaCurso(Integer codigoCurso) {
-        listaDeCursos.remove(codigoCurso);
-        System.out.println("Curso dado de baja");
+       if (listaDeCursos.remove(codigoCurso)){
+           System.out.println("Curso dado de baja correctamente");
+       } else {
+           System.out.println("Curso dado de baja");
+       }
     }
 
     public void altaProfesorAdjunto(String nombre, String apellido, Integer codigoProfesor, Integer cantidadDeHoras) {
-        if (listaDeProfesores.contains(codigoProfesor)) {
+        Profesor profesorNuevo = new ProfesorAdjunto(nombre, apellido, codigoProfesor, cantidadDeHoras);
+        if (listaDeProfesores.contains(profesorNuevo)) {
             System.out.println("Profesor ya en nuestra base de datos");
         } else {
-            listaDeProfesores.add(new ProfesorAdjunto(nombre, apellido, codigoProfesor, cantidadDeHoras));
+            listaDeProfesores.add(profesorNuevo);
             System.out.println("Bienvenido Profesor Adjunto " + nombre + " a DH");
         }
     }
 
     public void altaProfesorTitular(String nombre, String apellido, Integer codigoProfesor, String especialidad) {
-        if (listaDeProfesores.contains(codigoProfesor)) {
+        Profesor profesorNuevo= new ProfesorTitular(nombre, apellido, codigoProfesor, especialidad);
+        if (listaDeProfesores.contains(profesorNuevo)) {
             System.out.println("Profesor ya en nuestra base de datos");
         } else {
-            listaDeProfesores.add(new ProfesorTitular(nombre, apellido, codigoProfesor, especialidad));
+            listaDeProfesores.add(profesorNuevo);
             System.out.println("Bienvenido Profesor Titular " + nombre + " a DH");
         }
     }
 
     public void bajaProfesor(Integer codigoProfesor) {
-        listaDeProfesores.remove(codigoProfesor);
+        Profesor profesorAEliminar = buscarProfesor(codigoProfesor);
+        listaDeProfesores.remove(profesorAEliminar);
         System.out.println("\nProfesor dado de baja");
     }
 
     public void altaAlumno(String nombre, String apellido, Integer codigoAlumno) {
-        if (listaDeAlumnos.contains(codigoAlumno)){
-            System.out.println("Alumno ya en nuestra base de datos");
-        } else {
-            listaDeAlumnos.add(new Alumno(nombre, apellido, codigoAlumno));
+
+        if(listaDeAlumnos.add(new Alumno(nombre, apellido, codigoAlumno))){
             System.out.println("Bienvenido " + nombre + " a DH");
+        } else {
+            System.out.println("Alumno ya en nuestra base de datos");
         }
     }
 
-    private boolean buscarCurso(Integer codigoCurso) {
-        for (Curso curso:listaDeCursos) {
-            return curso.getCodigoDeCurso().equals(codigoCurso);
+    private Curso buscarCurso(Integer codigoCurso) {
+        Curso cursoBuscado = null;
+        for (Curso unCurso: listaDeCursos) {
+            if (unCurso.getCodigoDeCurso().equals(codigoCurso)){
+                cursoBuscado = unCurso;
+            }
         }
-        return false;
+        return cursoBuscado;
+    }
+
+    private boolean buscarCupo(Integer codigoCurso) {
+        Curso cursoBuscado = null;
+        for (Curso unCurso: listaDeCursos) {
+            if (unCurso.getCodigoDeCurso().equals(codigoCurso)){
+    cursoBuscado = unCurso;
+            }
+        }
+        return cursoBuscado.hayCupo();
     }
 
     public void inscribirAlumno(Integer codigoAlumno, Integer codigoCurso) {
-        if (hayCupo(codigoCurso) == true) {
-            listaDeInscriptos.add(new Inscripcion(codigoAlumno, codigoCurso, new Date()));
+        Curso cursoBuscado = buscarCurso(codigoCurso);
+        Alumno alumnoBuscado = buscarAlumno(codigoAlumno);
+        if (buscarCupo(codigoCurso)){
+            cursoBuscado.agregarUnAlumno(alumnoBuscado);
+            listaDeInscriptos.add(new Inscripcion(alumnoBuscado, cursoBuscado));
             System.out.println("Inscripcion completada" );
         } else {
             System.out.println("No hay cupo!!");
@@ -82,7 +103,7 @@ public class DigitalHouseManagment {
     private Profesor buscarProfesor(Integer codigoProfesor){
         Profesor profesorBuscado = null;
         for (Profesor unProfesor: listaDeProfesores) {
-            if (unProfesor.getCodigoProfesor().equals(unProfesor)) {
+            if (unProfesor.getCodigoProfesor().equals(codigoProfesor)) {
                 profesorBuscado = unProfesor;
             }
         }
@@ -90,22 +111,33 @@ public class DigitalHouseManagment {
     }
 
     public void asignarProfesores(Integer codigoCurso, Integer codigoProfesorTitular, Integer codigoProfesorAdjunto) {
-        if (buscarCurso(codigoCurso) == true) {
-            Profesor setUnProfesorAdjunto = buscarProfesor(codigoProfesorAdjunto);
-            Profesor setUnProfesorTitular = buscarProfesor( codigoProfesorTitular);
+        Curso cursoBuscado = buscarCurso(codigoCurso);
+        Profesor profesorTitularBuscado = buscarProfesor(codigoProfesorTitular);
+        Profesor profesorAdjuntoBuscado = buscarProfesor(codigoProfesorAdjunto);
+        cursoBuscado.setUnProfesorAdjunto(profesorAdjuntoBuscado);
+        cursoBuscado.setUnProfesorTitular(profesorTitularBuscado);
             System.out.println("Profesores Asignados!");
-        }
     }
 
-    public Boolean hayCupo(Integer codigoCurso) {
-    for (Curso curso:listaDeCursos) {
-            cupoMaximo = curso.getCupoMaximo(codigoCurso);
+
+
+    public Alumno buscarAlumno(Integer codigoAlumno){
+        Alumno alumnoBuscado = null;
+        for (Alumno unAlumno:listaDeAlumnos){
+        if (unAlumno.getCodigoAlumno().equals(codigoAlumno)){
+            alumnoBuscado = unAlumno;
         }
-        return listaDeInscriptos.size() <= cupoMaximo;
+        }
+        return alumnoBuscado;
     }
+
 
     public List<Alumno> getListaDeAlumnos() {
         return listaDeAlumnos;
+    }
+
+    public List<Inscripcion> getListaDeInscriptos() {
+        return listaDeInscriptos;
     }
 }
 

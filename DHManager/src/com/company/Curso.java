@@ -3,11 +3,12 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Curso extends DigitalHouseManagment{
+public class Curso{
 
     private String nombre;
     private Integer codigoDeCurso;
     private Integer cupoMaximo;
+    private List<Alumno> listaDeAlumnosDelCurso;
     private Profesor unProfesorTitular;
     private Profesor unProfesorAdjunto;
 
@@ -15,15 +16,18 @@ public class Curso extends DigitalHouseManagment{
         this.nombre = nombre;
         this.codigoDeCurso = codigoDeCurso;
         this.cupoMaximo = cupoMaximo;
-        this.unProfesorTitular = unProfesorTitular;
-        this.unProfesorAdjunto = unProfesorAdjunto;
+        this.listaDeAlumnosDelCurso = new ArrayList<>();
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public Boolean hayCupo(Integer codigoCurso) { return ((getListaDeAlumnos().size()-1) < cupoMaximo); }
+    public Boolean hayCupo() { return (listaDeAlumnosDelCurso.size() < cupoMaximo); }
+
+    public List<Alumno> getListaDeAlumnosDelCurso() {
+        return listaDeAlumnosDelCurso;
+    }
 
     public Integer getCodigoDeCurso() {
         return codigoDeCurso;
@@ -39,11 +43,11 @@ public class Curso extends DigitalHouseManagment{
 
 
     public Boolean agregarUnAlumno(Alumno unAlumno) {
-      return (getListaDeAlumnos().size()) < cupoMaximo ;
+      return listaDeAlumnosDelCurso.add(unAlumno);
     }
 
     public void eliminarAlumno(Alumno unAlumno) {
-        getListaDeAlumnos().remove(unAlumno);
+        listaDeAlumnosDelCurso.remove(unAlumno);
     }
 
     public Integer getCupoMaximo(Integer codigoDeCurso) {

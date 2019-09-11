@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a58657c5-9761-485c-8c6a-c5cd9fcb89ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../DHManager/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/DHManager.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/src/com/company/Alumno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/src/com/company/Curso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/src/com/company/DHManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/src/com/company/Inscripcion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/src/com/company/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/src/com/company/Profesor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/src/com/company/ProfesorAdjunto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DHManager/src/com/company/ProfesorTitular.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DHManager/out/production/DHManager/com/company/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DHManager/out/production/DHManager/com/company/Curso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DHManager/out/production/DHManager/com/company/DigitalHouseManagment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DHManager/out/production/DHManager/com/company/DigitalHouseManagment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DHManager/out/production/DHManager/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DHManager/out/production/DHManager/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DHManager/src/com/company/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DHManager/src/com/company/Curso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DHManager/src/com/company/DigitalHouseManagment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DHManager/src/com/company/DigitalHouseManagment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DHManager/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DHManager/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +36,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567731092865" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WODH" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
