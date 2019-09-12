@@ -1,5 +1,9 @@
 package com.company;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -38,6 +42,22 @@ public class Main {
 
         DHManager.bajaCurso(20001);
 
+        String linea = "";
+         File alumnosDeArchivo = new File("C:\\Users\\creyescruz\\Desktop\\DH\\DHproyectos\\DHManager\\listadoDeAlumnos.csv");
+        FileReader archivoLector;
+
+        try {
+            archivoLector = new FileReader(alumnosDeArchivo);
+            BufferedReader buffer = new BufferedReader(archivoLector);
+            while(buffer.ready()) {
+                if (!(linea = buffer.readLine()).equals("\000")) {
+                    System.out.println(linea);
+                }
+            }
+
+        } catch (Exception e) {
+
+        }
 
 /*      //crear los alumnos
 
