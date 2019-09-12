@@ -1,5 +1,8 @@
 package com.company;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.*;
 
 public class DigitalHouseManagment {
@@ -138,6 +141,26 @@ public class DigitalHouseManagment {
 
     public List<Inscripcion> getListaDeInscriptos() {
         return listaDeInscriptos;
+    }
+
+    public void inscribirAlumnosDesdeArchivo() {
+
+        String linea = "";
+        File alumnosDeArchivo = new File("C:\\Users\\DH\\Desktop\\Kraken Clon\\DHproyectos\\DHManager\\listadoDeAlumnos.csv");
+        FileReader archivoLector;
+
+        try {
+            archivoLector = new FileReader(alumnosDeArchivo);
+            BufferedReader buffer = new BufferedReader(archivoLector);
+            while(buffer.ready()) {
+                if (!(linea = buffer.readLine()).equals("\000")) {
+                    System.out.println(linea);
+                }
+            }
+
+        } catch (Exception e) {
+
+        }
     }
 }
 
