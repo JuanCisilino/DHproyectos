@@ -12,9 +12,10 @@ public class DigitalHouseManagment {
     private List<Curso> listaDeCursos;
     private List<Inscripcion> listaDeInscriptos;
     private Integer cupoMaximo;
+    private Integer codigoAlumno;
 
     public DigitalHouseManagment() {
-
+        this.codigoAlumno = 197;
         this.listaDeAlumnos = new ArrayList<>();
         this.listaDeProfesores = new ArrayList<>();
         this.listaDeCursos = new ArrayList<>();
@@ -29,10 +30,11 @@ public class DigitalHouseManagment {
     }
 
     public void bajaCurso(Integer codigoCurso) {
-       if (listaDeCursos.remove(codigoCurso)){
+        Curso cursoBuscado = buscarCurso(codigoCurso);
+       if (listaDeCursos.remove(cursoBuscado)){
            System.out.println("Curso dado de baja correctamente");
        } else {
-           System.out.println("Curso dado de baja");
+           System.out.println("No se ah podido dar de baja el Curso");
        }
     }
 
@@ -135,26 +137,23 @@ public class DigitalHouseManagment {
     }
 
 
-    public List<Alumno> getListaDeAlumnos() {
-        return listaDeAlumnos;
-    }
-
-    public List<Inscripcion> getListaDeInscriptos() {
-        return listaDeInscriptos;
-    }
-
-    public void inscribirAlumnosDesdeArchivo() {
+    public void inscribirAlumnosDesdeArchivo(Integer codigoCurso) {
 
         String linea = "";
-        File alumnosDeArchivo = new File("C:\\Users\\DH\\Desktop\\Kraken Clon\\DHproyectos\\DHManager\\listadoDeAlumnos.csv");
+        File alumnosDeArchivo = new File("C:\\Users\\creyescruz\\Desktop\\DH\\DHproyectos\\DHManager\\listadoDeAlumnos.csv");
         FileReader archivoLector;
+        String nombres[];
 
         try {
             archivoLector = new FileReader(alumnosDeArchivo);
             BufferedReader buffer = new BufferedReader(archivoLector);
             while(buffer.ready()) {
                 if (!(linea = buffer.readLine()).equals("\000")) {
-                    System.out.println(linea);
+                    nombres = linea.split(",");
+                    codigoAlumno++;
+                    altaAlumno(nombres[1],nombres[2],codigoAlumno);
+                    inscribirAlumno(codigoAlumno,codigoCurso);
+
                 }
             }
 

@@ -19,15 +19,9 @@ public class Curso{
         this.listaDeAlumnosDelCurso = new ArrayList<>();
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
     public Boolean hayCupo() { return (listaDeAlumnosDelCurso.size() < cupoMaximo); }
 
-    public List<Alumno> getListaDeAlumnosDelCurso() {
-        return listaDeAlumnosDelCurso;
-    }
 
     public Integer getCodigoDeCurso() {
         return codigoDeCurso;
@@ -46,21 +40,6 @@ public class Curso{
       return listaDeAlumnosDelCurso.add(unAlumno);
     }
 
-    public void eliminarAlumno(Alumno unAlumno) {
-        listaDeAlumnosDelCurso.remove(unAlumno);
-    }
-
-    public Integer getCupoMaximo(Integer codigoDeCurso) {
-        return cupoMaximo;
-    }
-
-    public Profesor getUnProfesorTitular() {
-        return unProfesorTitular;
-    }
-
-    public Profesor getUnProfesorAdjunto(Integer codigoProfesorAdjunto) {
-        return unProfesorAdjunto;
-    }
 
     @Override
     public boolean equals(Object obj) {

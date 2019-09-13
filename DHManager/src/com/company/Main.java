@@ -11,7 +11,7 @@ public class Main {
 
         DigitalHouseManagment DHManager = new DigitalHouseManagment();
 
-        DHManager.altaCurso("android", 20001, 2);
+        DHManager.altaCurso("android", 20001, 25);
         DHManager.altaCurso("full stack", 20002, 3);
 
         DHManager.altaAlumno("Juan","Cisilino",123);
@@ -40,9 +40,10 @@ public class Main {
 
         DHManager.bajaProfesor(789);
 
-        DHManager.bajaCurso(20001);
 
-        DHManager.inscribirAlumnosDesdeArchivo();
+        DHManager.inscribirAlumnosDesdeArchivo(20001);
+
+        DHManager.bajaCurso(20002);
 
 /*      //crear los alumnos
 
